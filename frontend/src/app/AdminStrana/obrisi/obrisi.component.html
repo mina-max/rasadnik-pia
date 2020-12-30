@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,600,700&amp;lang=en">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="obrisi.component.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <div class="navbar-brand" href="#">
+                <ul class=navbar-nav ml-auto>
+
+                    <li>
+                        <div class="nav-item" id="title">WEB-Rasadnik</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/admin'>Zahtevi za registracijom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/dodaj'>Dodaj korisnika</a>
+                    </li>
+                  
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink='/obrisi'>Korisnici</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)='odjava()' routerLink='/login'>Odjavi se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="home">
+        Korisnici
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <label class="myheader">Poljoprivrednici</label>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ime</th>
+                            <th scope="col">Prezime</th>
+                            <th>Korisničko ime</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let polj of PoljoprivredniciKor; let i = index'>
+                            <td>{{polj.ime}}</td>
+                            <td>{{polj.prezime}}</td>
+                            <td>{{polj.username}}</td>
+                            <td>
+                                <div>
+                                    <button (click)='azurirajPolj(polj)' class="login_btn">
+                                        Ažuriraj
+                                    </button>
+                                    <button (click)='obrisiPolj(polj.username, i)' class="login_btn1">
+                                        Obriši
+                                    </button>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <label class="myheader">Preduzeća</label>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Naziv</th>
+                            <th scope="col">Korisničko ime</th>
+                            <th>Mesto</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let pred of PreduzecaKor; let i = index'>
+                            <td>{{pred.ime}}</td>
+                            <td>{{pred.username}}</td>
+                            <td>{{pred.mesto}}</td>
+                            <td>
+                                <div>
+                                    <button (click)='azurirajPred(pred)' class="login_btn">
+                                        Ažuriraj
+                                    </button>
+                                    <button (click)='obrisiPred(pred.username, i)' class="login_btn1">
+                                        Obriši
+                                    </button>
+                                </div>
+
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

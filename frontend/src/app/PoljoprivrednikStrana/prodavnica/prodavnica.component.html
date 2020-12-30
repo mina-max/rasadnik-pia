@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,600,700&amp;lang=en">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="prodavnica.component.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <div class="navbar-brand" href="#">
+                <ul class=navbar-nav ml-auto>
+
+                    <li>
+                        <div class="nav-item" id="title">WEB-Rasadnik</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/poljoprivrednik'>Nazad na profil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink='/prodavnica'>Svi proizvodi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)='odjava()' routerLink='/login'>Odjavi se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="home">
+        Dobrodošli u Online prodavnicu!
+    </div>
+
+    <div class=container>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label  class = "myheader">Sadnice</label>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                        <th>Naziv</th>
+                        <th>Proizvodjač</th>
+                        <th>Životni vek</th>
+                        <th>Dostupnost</th>
+                        <th>Cena</th>
+                        <th>Prosečna ocena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let sadnica of Sadnice; let i = index;">
+                            <td (click) = detaljnoProizvod(sadnica)><a class = lin href = "/detaljnoProizvod">{{sadnica.naziv}}</a></td>
+                            <td>{{sadnica.proizvodjac}}</td>
+                            <td>{{sadnica.zivotniVek}}</td>
+                            <td>{{sadnica.stanje}}</td>
+                            <td>{{sadnica.cena}}</td>
+                            <td>{{sadnica.prosecnaOcena}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <label  class = "myheader">Preparati</label>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                        <th>Naziv</th>
+                        <th>Proizvodjač</th>
+                        <th>Ubrzavanje</th>
+                        <th>Dostupnost</th>
+                        <th>Cena</th>
+                        <th>Prosečna ocena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let preparat of Preparati; let i = index;">
+                            <td (click) = detaljnoProizvod(preparat)><a class ="lin" href = "/detaljnoProizvod">{{preparat.naziv}}</a></td>
+                            <td>{{preparat.proizvodjac}}</td>
+                            <td>{{preparat.daniUbrzavanje}}</td>
+                            <td>{{preparat.stanje}}</td>
+                            <td>{{preparat.cena}}</td>
+                            <td>{{preparat.prosecnaOcena}}</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

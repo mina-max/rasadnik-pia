@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button mat-mini-fab style="float: right;" [mat-dialog-close]=false>X</button>
+    <form [formGroup]='fg' (ngSubmit)=posalji()>
+        <mat-form-field>
+            <input required type=number matInput min=1 max=10 formControlName="ocena" name=ocena placeholder="Ocena (1-10)">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea required type=text matInput formControlName="kom" name=kom style="resize: none; width:330px; height:150px" placeholder="Komentar" maxlength="400"></textarea>
+        </mat-form-field>
+        <br>
+        <button type=submit mat-raised-button >Pošalji</button>
+    </form>
+</body>
+
+</html>

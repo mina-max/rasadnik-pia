@@ -1,0 +1,20 @@
+
+
+.login_btn{
+    
+    color: black;
+    background-color: #2aa4a8;
+    width: 70px;
+    height: 30px;
+    border: 0px;
+    
+    }
+    
+    .login_btn:hover{
+    color: white;
+    background-color: rgb(12, 46, 29);
+    }
+    .col-sm-6{
+        align-content: center;
+        text-align: center;
+    }

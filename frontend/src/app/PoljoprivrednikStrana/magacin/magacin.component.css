@@ -1,0 +1,213 @@
+
+html,body{
+    background-image: url('../../../assets/login.jpg');
+    background-blend-mode: darken;
+    background-size: 100% 100%;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow: auto;
+    height: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    vertical-align: center;
+    }
+    
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    #title{
+      font-size: 30px;
+      font-style: oblique;
+    }
+    
+    .container{
+    height: 70%;
+    align-content: center;
+    
+    }
+    
+    #n {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+    
+    .card{
+    height: 150px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 150px;
+    background-color: rgb(108, 146, 108);
+    }
+    
+    .form-control {
+        background-color: #9fd2ce
+    }
+    
+    .card-header {
+     
+    height:800px;
+    
+    background: url("../../../assets/log.jpg");
+    background-size: 425px 300px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 57px;
+    font-weight: 770;
+    color: white;
+    text-align: center;
+    }
+    
+    #txt {
+      position: relative;
+      top:65%;
+    }
+    
+   
+    input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }
+    
+    
+    .login_btn{
+    
+    color: black;
+    background-color: #298185;
+    width: 50px;
+    height: 25px;
+    border:0px;
+    }
+    
+    .login_btn:hover{
+    color: white;
+    background-color: rgb(14, 44, 14);
+    }
+    
+    .card-footer {
+      font-size: 20px;
+    }
+    
+    .links{
+    color: black;
+    
+    }
+    .row{
+
+    color: white;
+        text-align: center;
+    
+    }
+    
+    .links a{
+    margin-left: 4px;
+    }
+    
+    #link{
+      color: #167277;
+      font-weight: 500;
+    }
+
+    .home{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 500;
+        font-size: 35px;
+        color: white;
+        text-align: left;
+        margin-top: 15px;
+        margin-left: 140px;
+    }
+
+    .table{
+      font-size: 15px;
+        background-color: #32373d;
+        width: 75%;
+        text-align: left;
+    }
+
+    .table th {
+      background-color: rgb(51, 80, 51);
+      border-bottom: solid rgb(29, 29, 29) 2px;
+    }
+  
+    #italic {
+        font-style: oblique;
+    }
+
+   #m{
+    background-color:  rgba(65, 94, 65, 0.877);
+    }
+
+    .selected {
+      background-color: rgb(108, 146, 108);
+      color: black;
+    }
+
+  
+  #myRow {
+    height:5vw; /* Set this to whatever amount forms square cells */
+ 
+  }
+
+ /* td div.only-show-on-hover {
+    visibility: hidden;
+}
+td:hover div.only-show-on-hover  {
+    width:70px;
+    height: 70px;
+    visibility: visible;
+}*/
+
+.normal{
+  width: 20px;
+  height: 20px;
+  border-color: rgb(102, 62, 35);
+  border-left:solid rgb(0, 0, 0) 4px;
+  border-top:solid rgb(0, 0, 0) 4px;
+  border-bottom: solid rgb(0, 0, 0) 4px;
+  border-right: solid rgb(0, 0, 0) 4px;
+}
+.dashboard{
+  background-color: rgb(0, 0, 0);
+  width: 315px;
+  height: 70px;
+  color: rgb(255, 255, 255);
+}
+
+.file {
+  size: 20px;
+}
+
+.plus{
+  background-color: rgba(0, 0, 0, 0.418);
+
+}
+
+.myheader{
+  font-size: 30px;
+  text-align: center;
+  
+}
+
+.col-sm-6{
+  text-align: left;
+}
+
+.filter{
+    
+  color: black;
+  background-color: #298185;
+  width: 80px;
+  height: 40px;
+  border:0px;
+  margin-left: 10px;
+  }
+  
+  .filter:hover{
+  color: white;
+  background-color: rgb(14, 44, 14);
+  }

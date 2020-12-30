@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,600,700&amp;lang=en">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="dodaj-steps.component.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <div class="navbar-brand" href="#">
+                <ul class=navbar-nav ml-auto>
+
+                    <li>
+                        <div class="nav-item" id="title">WEB-Rasadnik</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/proizvodiPreduzece'>Svi proizvodi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class=container>
+        <div class=containerm>
+            <mat-horizontal-stepper linear>
+                <mat-step label="Tip" [stepControl]="tipFormGroup">
+                    <form [formGroup]="tipFormGroup" (ngSubmit)=t()>
+                        <p>
+                            <mat-radio-group formControlName="tip" aria-labelledby="example-radio-group-label" class="example-radio-group">
+                                <mat-radio-button class="example-radio-button" value=S>
+                                    Sadnica
+                                </mat-radio-button>
+                                <mat-radio-button class="example-radio-button" value=P>
+                                    Preparat
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </p>
+                        <div>
+                            <button type=submit mat-raised-button matStepperNext>Dalje</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step label="Opis" [stepControl]="opisFormGroup">
+                    <form [formGroup]="opisFormGroup" (ngSubmit)=opis()>
+                        <p>
+                            <mat-form-field>
+                                <input matInput placeholder="Naziv" formControlName="naziv" required>
+                            </mat-form-field>
+                        </p>
+                        <p *ngIf = "tip == 'S'">
+                            <mat-form-field>
+                                <input type=number min=1 matInput placeholder="Životni vek" formControlName="zivotniVek"
+                                    required>
+                            </mat-form-field>
+                        </p>
+                        <p *ngIf = "tip == 'P'">
+                            <mat-form-field>
+                                <input type=number min=1 matInput placeholder="Dani ubrzavanje" formControlName="daniUbrzavanje"
+                                    required>
+                            </mat-form-field>
+                        </p>
+                        <div>
+                            <button type=submit mat-raised-button matStepperNext>Dalje</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step label="Kolicina" [stepControl]="kolicinaFormGroup">
+                    <form [formGroup]="kolicinaFormGroup" (ngSubmit)=kol()>
+                        <p>
+                            <mat-form-field>
+                                <input type=number min=1 matInput placeholder="Količina" formControlName="kolicina"
+                                    required>
+                            </mat-form-field>
+                        </p>
+                        <div>
+                            <button mat-raised-button matStepperNext>Dalje</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step label="Cena" [stepControl]="cenaFormGroup">
+                    <form [formGroup]="cenaFormGroup" (ngSubmit)=c()>
+                        <p>
+                            <mat-form-field>
+                                <input type=number min=1 matInput placeholder="Cena po komadu" formControlName="cena"
+                                    required>
+                            </mat-form-field>
+                        </p>
+                        <div>
+                            <button mat-raised-button matStepperNext>Dodaj</button>
+                        </div>
+                    </form>
+                </mat-step>
+            </mat-horizontal-stepper>
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

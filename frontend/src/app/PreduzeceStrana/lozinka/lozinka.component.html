@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,600,700&amp;lang=en">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="lozinka.component.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <div class="navbar-brand" href="#">
+                <ul class=navbar-nav ml-auto>
+
+                    <li>
+                        <div class="nav-item" id="title">WEB-Rasadnik</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/preduzece'>Narudzbine</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/proizvodiPreduzece'>Svi proizvodi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/poslovanje'>Poslovanje</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink='/lozinka'>Promeni lozinku</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)='odjava()' routerLink='/login'>Odjavi se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+
+    <div class="home">
+        Promena lozinke
+    </div>
+
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                
+                <div class="card-body">
+                    <form>
+                        <div class="input-group form-group">   
+                            <input type="text" [(ngModel)] = 'staraSifra' name = 'old' class="form-control" placeholder="Stara lozinka">
+                        </div>
+                        <div class="input-group form-group"> 
+                            <input type="password" [(ngModel)] = 'novaSifra' name = 'password' class="form-control" placeholder="Nova lozinka">
+                        </div>
+                        <div class="input-group form-group"> 
+                            <input type="password" [(ngModel)] = 'novaSifra2' name = 'password' class="form-control" placeholder="Potvrda nove lozinke">
+                        </div>
+                        <div class="form-group">
+                            <button (click) = 'promeniLozinku()'  value="submit" class="btn float-center login_btn">
+                            Potvrdi</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

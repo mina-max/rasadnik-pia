@@ -1,0 +1,161 @@
+
+html, body{
+    background-image: url('../../../assets/shop.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+    background-attachment: scroll;
+    font-family: 'Open Sans Condensed', sans-serif;
+    vertical-align: center;      
+    overflow: auto;
+    }
+    
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    #title{
+      font-size: 30px;
+      font-style: oblique;
+    }
+    
+    .container{
+    height: 70%;
+    align-content: center;
+    
+    }
+    
+    #n {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+    
+    .card{
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(108, 146, 108, 0.904);
+    background-color: rgba(29, 63, 43, 0.897);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    }
+    
+    .form-control {
+        background-color: #9fd2ce
+    }
+    
+    .card-header {
+     
+    height:50px;
+    background-image: url('../../../assets/kom3.jpg');
+    background-size: cover;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    }
+    
+    #txt {
+      position: relative;
+      top:65%;
+    }
+    
+    
+    
+    .login_btn{
+    
+    color: white;
+    background-color: rgb(23, 49, 34);
+    width: 100px;
+    height: 70px;
+    margin-top: 15px;
+    border:0px;
+    }
+    
+    .login_btn:hover{
+    color: black;
+    background-color: rgb(105, 145, 105);
+    }
+    
+    .card-footer {
+      font-size: 20px;
+    }
+    
+    .links{
+    color: black;
+    
+    }
+    .row{
+
+    color: white;
+        text-align: center;
+    
+    }
+    
+    .links a{
+    margin-left: 4px;
+    }
+    
+    #link{
+      color: #167277;
+      font-weight: 500;
+    }
+
+    .home{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 500;
+        font-size: 35px;
+        color: white;
+        text-align: left;
+        margin-top: 15px;
+    }
+
+.myheader{
+  font-size: 30px;
+  text-align: center;
+  
+}
+
+.col-sm-6{
+  text-align: left;
+  height: auto;
+}
+
+#k{
+    background-color: rgba(10, 22, 20, 0.842);
+    color: white;
+    width: 300px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.ime{
+    font-size: 30px;
+}
+#h{
+    
+    background-image: url('../../../assets/kom2.jpg');
+    background-size: cover;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    height: auto;
+    color: white
+}
+#l{
+    float:right; margin-right: 140px;
+    width:150px;
+    height:40px;
+    margin-top: 0;
+}
+
+.korpa{
+  width: 70px;
+  margin-top: 10px;
+  background-color: rgb(113, 168, 102);
+  border: 0;
+}
+.korpa:hover{
+  background-color: rgb(23, 49, 34);
+}

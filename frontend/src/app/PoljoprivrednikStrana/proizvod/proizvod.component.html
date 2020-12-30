@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,600,700&amp;lang=en">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="proizvod.component.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <div class="navbar-brand" href="#">
+                <ul class=navbar-nav ml-auto>
+
+                    <li>
+                        <div class="nav-item" id="title">WEB-Rasadnik</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li *ngIf = "preduzece == false" class="nav-item">
+                        <a class="nav-link" routerLink='/poljoprivrednik'>Nazad na profil</a>
+                    </li>
+                    <li *ngIf = "preduzece == false" class="nav-item">
+                        <a class="nav-link" routerLink='/prodavnica'>Svi proizvodi</a>
+                    </li>
+                    <li *ngIf = "preduzece == false" class="nav-item">
+                        <a class="nav-link" (click)='odjava()' routerLink='/login'>Odjavi se</a>
+                    </li>
+                    <li *ngIf = "preduzece == true" class="nav-item">
+                        <a class="nav-link" routerLink='/proizvodiPreduzece'>Nazad na profil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class=container>
+        <div class="row">
+            <div class=col-sm-8>
+                <div class="home">
+                    Detaljni prikaz proizvoda: {{proizvod.naziv}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <button *ngIf = "preduzece == false" class = "korpa" (click) = korpa()><i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class=row>
+            <div class=col-sm-6>
+                <div class=card id=k>
+                    <div class=card-header id = h>
+                        <label>{{proizvod.naziv}}</label>
+                    </div>
+                    <div class=card-body>
+                        <label>Cena: {{proizvod.cena}} dinara    </label><br><label *ngIf = "preduzece">Prosečna ocena: {{proizvod.prosecnaOcena}}</label>
+                        <label *ngIf = "preduzece == false">Proizvođač: {{proizvod.proizvodjac}}</label><br>
+                        <label *ngIf = "preduzece == false">Dostupnost: {{proizvod.stanje}}</label><br>
+                        <label *ngIf = "preduzece == false && komentarisao">Moja ocena: {{o}}</label><br>
+                        <br>
+                        <div *ngIf = "preduzece == false && proizvod.stanje == 'Na stanju'" style="text-align: center;"><button class=login_btn (click) = dodajProizvod()>Dodaj u korpu</button></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class=col-sm-6>
+                <div>
+                <label style="font-size: 24px;">Komentari</label>
+                <button *ngIf = "preduzece == false && !komentarisao && narucivao" class="login_btn" id = l (click)=dodajKomentar()>Ostavi komentar</button></div>
+                <div class=card *ngFor="let komentar of Komentari">
+                    <div class=card-header>
+                        <label>{{komentar.username}}</label>
+                        <label style="float:right">Ocena: {{komentar.ocena}} Datum: {{komentar.datum}}</label>
+                    </div>
+                    <div class=card-body>
+                        {{komentar.tekst}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

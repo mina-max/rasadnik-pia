@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,600,700&amp;lang=en">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="poljoprivrednik.component.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <div class="navbar-brand" href="#">
+                <ul class=navbar-nav ml-auto>
+
+                    <li>
+                        <div class="nav-item" id="title">WEB-Rasadnik</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink='/poljoprivrednik'>Moji rasadnici</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/dodajRasadnik'>Dodaj novi rasadnik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/prodavnica'><label id="italic">Online</label> prodavnica</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/sifra'>Promeni lozinku</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)='odjava()' routerLink='/login'>Odjavi se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="home">
+        Rasadnici korisnika <label id="italic">{{user.username}}</label>
+    </div>
+
+    <div class=container>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th id='m' scope="col">Naziv</th>
+                            <th id=m scope="col">Mesto</th>
+                            <th id=m scope="col">Broj sadnica</th>
+                            <th id=m scope="col">Slobodno mesta</th>
+                            <th id=m scope="col">Voda [l]</th>
+                            <th id=m scope="col">Temperatura [°C] </th>
+                            <th id=m scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let rasadnik of Rasadnici; let i = index;' (click)="prikaziSadnice(rasadnik, i)"
+                            [class.selected]="i == selectedRow">
+                            <td>{{rasadnik.naziv}}</td>
+                            <td>{{rasadnik.mesto}}</td>
+                            <td>{{rasadnik.sadnice}}</td>
+                            <td>{{rasadnik.slobodnaMesta}}</td>
+                            <td>{{rasadnik.voda}}</td>
+                            <td>{{rasadnik.temp}}</td>
+                            <td *ngIf="i == selectedRow"><button (click)="prikaziMagacin()"
+                                    class="login_btn">Magacin</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="selectionActive" class="col-sm-4">
+                <table id=tab class="table">
+                    <tbody>
+                        <tr id=myRow *ngFor="let row of Matrica; let i = index">
+                            <td id=td1 *ngFor="let x of row; let j = index" class=normal
+                                [class.cvet]="Matrica[i][j] == 1" (mouseenter)='onMouseEnter(i,j)'
+                                (mouseleave)='onMouseLeave()' [class.plus]="!sadnica && plus"
+                                (click)="dodajSadnicuPreparat(i, j)">
+                                <span class="p" *ngIf='!sadnica && plus && Matrica[i][j] == 0'>+</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="M">
+                                <div style="font-size: 15px; color:white;">Voda: </div>
+                                <button (click)="promeniVodu(1)" class="but">+</button>
+                                <div style="font-size: 15px; color:white;text-align: center;">{{selRasadnik.voda}} l</div>
+                                <button (click)="promeniVodu(-1)" class="but">-</button>
+
+                            </td>
+                            <td colspan="M">
+                                <div style="font-size: 15px; color:white;">Temperatura: </div>
+                                <button (click)="promeniTemp(1)" class="but">+</button>
+                                <div style="font-size: 15px; color:white; text-align: center;">{{selRasadnik.temp}} °C
+                                </div>
+                                <button (click)="promeniTemp(-1)" class="but">-</button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+
+
+            </div>
+            <div *ngIf="sadnica == true" class="col-sm-2">
+                <div class="card">
+                    <span style="font-size: 20px; ">Naziv: </span>
+                    <label style="font-style: italic; font-size: 19px;">{{selSadnica.naziv}}</label>
+                    <span style="font-size: 20px ">Proizvođač: </span>
+                    <label style="font-style: italic; font-size: 19px;">{{selSadnica.proizvodjac}}</label>
+                    <mat-progress-bar mode="determinate" color="accent" [value]="procenat" class="bar"></mat-progress-bar>
+                    <label>{{procenatString}}%</label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

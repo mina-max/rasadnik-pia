@@ -1,0 +1,238 @@
+
+html,body{
+    background-image: url('../../../assets/login.jpg');
+    background-blend-mode: darken;
+    background-size: 100% 100%;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    vertical-align: center;
+    background-attachment: scroll;
+    overflow: auto;
+    }
+    
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    #title{
+      font-size: 30px;
+      font-style: oblique;
+    }
+    
+    .container{
+    height: 70%;
+    align-content: center;
+    
+    }
+    
+    #n {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+    
+    .card{
+    height: 190px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 150px;
+    background-color: rgb(139, 185, 139);
+    text-align: center;
+    }
+    
+    .form-control {
+        background-color: #9fd2ce
+    }
+    
+    .card-header {
+     
+    height:800px;
+    
+    background: url("../../../assets/log.jpg");
+    background-size: 425px 300px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 57px;
+    font-weight: 770;
+    color: white;
+    text-align: center;
+    }
+    
+    #txt {
+      position: relative;
+      top:65%;
+    }
+    
+    
+    .input-group-prepend span{
+    width: 50px;
+    background-color:rgb(216, 216, 216);
+    color: black;
+    border:0 !important;
+    }
+    
+    input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }
+    
+    
+    .login_btn{
+    
+    color: black;
+    background-color: #2aa4a8;
+    width: 60px;
+    height: 25px;
+    border: 0px;
+    
+    }
+    
+    .login_btn:hover{
+    color: white;
+    background-color: rgb(12, 46, 29);
+    }
+    
+    .card-footer {
+      font-size: 20px;
+    }
+    
+    .links{
+    color: black;
+    
+    }
+    
+    
+    
+    .links a{
+    margin-left: 4px;
+    }
+    
+    #link{
+      color: #167277;
+      font-weight: 500;
+    }
+
+    .home{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 500;
+        font-size: 35px;
+        color: white;
+        text-align: left;
+        margin-top: 15px;
+        margin-left: 140px;
+    }
+
+    .table{
+      font-size: 15px;
+        background-color: #32373d;
+        
+        width: 70%;
+        text-align: center;
+    }
+
+    #italic {
+        font-style: oblique;
+    }
+
+   #m{
+    background-color:  rgba(65, 94, 65, 0.877);
+    }
+
+    .selected {
+      background-color: rgb(108, 146, 108);
+      color: black;
+    }
+
+
+   .cvet {
+     background-image: url(../../../assets/cvet.jpg);
+     background-size:120%;
+     background-repeat: no-repeat;
+     color: rgba(248, 248, 255, 0);
+   }
+
+  
+  #tab {
+    table-layout: fixed;
+    width: 90%;
+   background-color: rgb(58, 31, 18);
+   margin-bottom: 0px;
+   box-shadow: 7px 5px 13px black
+   
+  }
+  
+  #myRow {
+    height:5vw; /* Set this to whatever amount forms square cells */
+ 
+  }
+
+ /*td div.only-show-on-hover {
+    visibility: hidden;
+}
+td:hover div.only-show-on-hover  {
+    width:70px;
+    height: 70px;
+    visibility: visible;
+}*/
+
+.normal{
+  width: 20px;
+  height: 20px;
+  border-color: rgb(102, 62, 35);
+  border-left:solid rgb(0, 0, 0) 4px;
+  border-top:solid rgb(0, 0, 0) 4px;
+  border-bottom: solid rgb(0, 0, 0) 4px;
+  border-right: solid rgb(0, 0, 0) 4px;
+}
+.dashboard{
+  background-color: rgb(0, 0, 0);
+  width: 315px;
+  height: 70px;
+  color: rgb(255, 255, 255);
+}
+
+.file {
+  size: 20px;
+}
+
+.plus{
+  background-color: rgba(0, 0, 0, 0.418);
+  
+}
+.p{
+  font-size: 25px;
+  font-weight: 600;
+  
+}
+
+.col-sm-4{
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+#dash{
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.but{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: rgb(12, 46, 29);
+  color: white;
+  border: 0px;
+}
+.but:hover{
+  background-color: rgb(34, 109, 99);
+  color: black;
+}
+.bar{
+  padding-left: 5px;
+  padding-bottom: 15px;
+}
+

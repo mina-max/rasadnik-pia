@@ -1,0 +1,159 @@
+
+
+html,body{
+    background-image: url('../../../assets/login.jpg');
+    background-blend-mode: darken;
+    background-size: 100% 100%;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    vertical-align: center;
+    }
+    
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    #title{
+      font-size: 30px;
+      font-style: oblique;
+    }
+    
+    .container{
+    height: 70%;
+    align-content: center;
+    
+    }
+    
+    #n {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+    
+ 
+    
+    .form-control {
+        background-color: #9fd2ce
+    }
+    
+   
+    
+    #txt {
+      position: relative;
+      top:65%;
+    }
+    
+    
+    .input-group-prepend span{
+    width: 50px;
+    background-color:rgb(216, 216, 216);
+    color: black;
+    border:0 !important;
+    }
+    
+    input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }
+    
+    
+    .login_btn{
+        font-size: 16px;
+    
+    color: black;
+    background-color: #298185;
+    width: 60px;
+    height: 30px;
+    margin-bottom: 5px;
+    margin-right: 3px;
+    border: 0px;
+    }
+
+    
+    .login_btn1{
+        font-size: 16px;
+    
+    color: black;
+    background-color: #298185;
+    width: 60px;
+    height: 30px;
+    border: 0px;
+    
+    }
+    
+    .login_btn:hover{
+    color: black;
+    background-color: rgb(14, 44, 14);
+    }
+
+    .login_btn1:hover{
+        color: black;
+        background-color: rgb(124, 0, 0);
+    }
+    
+    .card-footer {
+      font-size: 20px;
+    }
+    
+    .links{
+    color: black;
+    
+    }
+    
+    
+    
+    .links a{
+    margin-left: 4px;
+    }
+    
+    #link{
+      color: #167277;
+      font-weight: 500;
+    }
+
+    .home{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 500;
+        font-size: 35px;
+        color: white;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .table{
+        background-color: #32373d;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .row{
+        color: white;
+        text-align: center;
+    }
+
+    .myheader{
+        font-size: 30px;
+        text-align: center;
+        
+    }
+
+    
+    .table th {
+      background-color: rgb(51, 80, 51);
+      border-bottom: solid rgb(29, 29, 29) 2px;
+      font-size: 15px;
+    }
+
+    .table td {
+      
+      
+  border-bottom: solid rgb(29, 29, 29) 1px;
+
+    }

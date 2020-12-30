@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div style = "margin-top: 0;">
+        <label *ngIf = "!postoji" style="margin-right: 45px;">{{msg}}</label>
+        <button mat-mini-fab  [mat-dialog-close]=false style="float: right; margin-top: 0;">X
+        </button>
+    </div>
+    <table *ngIf = "postoji" class=table>
+        <thead>
+            <th>Naziv</th>
+            <th>Proizvodjac</th>
+            <th>Kolicina</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of Artikli">
+                <td>{{p.proizvod.naziv}}</td>
+                <td>{{p.proizvod.proizvodjac}}</td>
+                <td>{{p.kolicina}}</td>
+                <td (click)=obrisi(p)><button mat-mini-fab color = basic>X</button>
+                    <!--<i class="fas fa-times"></i>!--></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf = "postoji">
+        <form>
+        <mat-select required placeholder="Rasadnik" style="width: 40%;" [(ngModel)]='ras' name=ras>
+            <mat-option *ngFor="let rasadnik of Rasadnici; let i = index" [value] = rasadnik._id>{{rasadnik.naziv}}</mat-option>
+        </mat-select>
+    
+        <label style="float: right;">Cena: {{cena}}RSD</label> <br>
+        <div style="float: right;">
+            <br>
+            <button (click) = "selektujRasadnik(ras)" mat-raised-button style="float: right;">Naruči</button>
+        </div>
+    </form>
+    </div>
+</body>
+
+</html>

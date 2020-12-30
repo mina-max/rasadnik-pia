@@ -1,0 +1,30 @@
+{
+  "name": "projekatpia",
+  "version": "1.0.0",
+  "description": "projekat PIA jun/jul 2020.",
+  "main": "server.js",
+  "scripts": {
+    "watch": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "PIA"
+  ],
+  "author": "Mirjana Radosavljevic",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.11",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.6",
+    "rxjs": "^6.5.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
